@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(255, 111, 111);
+}
+#img{
+    border: 9px solid rgb(160, 0, 0);
+    border-radius: 6%;
+    width: 500px;
+    margin:20px;
+    transition: 2s;
+}
+input{
+    border: 3px solid rgb(160, 0, 0);
+    border-radius: 3%;
+}
