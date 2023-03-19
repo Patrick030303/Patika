@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Pitagorasz tétel</title>
+    <style>
+        #haromszog{
+            width: 0;
+            height: 0;
+            display: inline-block;
+            border-bottom: 100px solid sandybrown;
+            border-right: 100px solid transparent;
+        }
+    </style>
 </head>
 <body style="text-align: center;">
     <h1>Pitagorasz tétel</h1>
@@ -26,7 +35,16 @@
             Eredmény: <span id="result"></span>
         </p>
     </form>
-
+    <form action="javascript:void(0)" style="text-align: center;></form>
+        <fieldset style="width: 50%;">
+         <legend>Add meg a két befogóját a háromszögnek: </legend>
+         <label for="a">a oldal: </label>
+         <input type="number" name="num" id="a" oninput="rajzol()"><br>
+         <label for="b">b oldal: </label>
+         <input type="number" name="num" id="b" oninput="rajzol()"><br><br>
+        </fieldset>
+     </form>
+    <div id="haromszog"></div>
     <script>
         function calculate() {
             // Az A, B és C oldal hossza
@@ -57,6 +75,13 @@
             // Kiírjuk az eredményt
             document.getElementById("result").innerHTML = "A oldal hossza: " + a.toFixed(2) + ", B oldal hossza: " + b.toFixed(2) + ", C oldal hossza: " + c.toFixed(2);
         }
+        
+        function rajzol() {
+        const hsz = document.getElementById('haromszog');
+        hsz.style = "border-bottom: " + a.value + "px solid sandybrown" + 
+        "border-right: "+ b.value +" px solid transparent"
+
+    }
     </script>
 </body>
 </html>
